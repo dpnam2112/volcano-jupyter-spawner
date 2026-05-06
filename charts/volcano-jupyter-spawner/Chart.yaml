@@ -4,6 +4,13 @@ name: volcano-jupyter-spawner
 description: "Make it easier to spawn jupyter notebook as a Volcano batch job."
 type: application
 version: 0.0.1-dev
+
+annotations:
+  catalog.cattle.io/display-name: "Volcano Jupyter Spawner"
+  catalog.cattle.io/type: "app"
+  catalog.cattle.io/certified: "rancher"
+  catalog.cattle.io/namespace: "default"
+
 maintainers:
   - name: dpnam2112
     email: dpnam2112@gmail.com
