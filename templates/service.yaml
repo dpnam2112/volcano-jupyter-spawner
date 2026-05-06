@@ -1,0 +1,17 @@
+{{- $commonLabels := include "volcano-jupyter-spawner.commonLabels" . -}}
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ .Values.jobName }}-svc
+  labels:
+    {{- $commonLabels | nindent 4 }}
+spec:
+  type: ClusterIP
+  ports:
+    - port: 8888
+      targetPort: http
+      protocol: TCP
+      name: http
+  selector:
+    volcano.sh/job-name: {{ .Values.jobName }}

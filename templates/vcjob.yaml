@@ -1,0 +1,56 @@
+{{- $commonLabels := include "volcano-jupyter-spawner.commonLabels" . -}}
+
+apiVersion: batch.volcano.sh/v1alpha1
+kind: Job
+metadata:
+  name: {{ .Values.jobName | quote }}
+  labels:
+    {{- $commonLabels | nindent 4 }}
+spec:
+  queue: {{ .Values.queue }}
+  tasks:
+    - replicas: 1
+      name: notebook
+      template:
+        metadata:
+          labels:
+            {{- $commonLabels | nindent 12 }}
+        spec:
+          restartPolicy: Never
+          {{- if .Values.wallTimeSeconds }}
+          activeDeadlineSeconds: {{ .Values.wallTimeSeconds }}
+          {{- end }}
+          containers:
+            - name: jupyter
+              image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+              command: ["start-notebook.sh"]
+              args:
+                - "--ServerApp.base_url=/{{ .Values.username }}/{{ .Values.jobName }}"
+                - "--ServerApp.token=''" # Disable token auth for this simplified version
+              ports:
+                - containerPort: 8888
+                  name: http
+              {{- if .Values.resources }}
+              resources:
+                requests:
+                  {{- range $key, $val := .Values.resources }}
+                  {{ $key | quote }}: {{ $val | quote }}
+                  {{- end }}
+                limits:
+                  {{- range $key, $val := .Values.resources }}
+                  {{ $key | quote }}: {{ $val | quote }}
+                  {{- end }}
+              {{- end }}
+              volumeMounts:
+                {{- range $index, $mount := .Values.nfs.mounts }}
+                - name: nfs-volume-{{ $index }}
+                  mountPath: {{ $mount.mountPath }}
+                  readOnly: {{ default false $mount.readOnly }}
+                {{- end }}
+          volumes:
+            {{- range $index, $mount := .Values.nfs.mounts }}
+            - name: nfs-volume-{{ $index }}
+              nfs:
+                server: {{ $mount.server }}
+                path: {{ $mount.path }}
+            {{- end }}

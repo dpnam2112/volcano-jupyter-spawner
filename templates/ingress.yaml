@@ -1,0 +1,22 @@
+{{- $ingressPath := include "volcano-jupyter-spawner.ingressPath" . -}}
+{{- $commonLabels := include "volcano-jupyter-spawner.commonLabels" . -}}
+
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: {{ .Values.jobName }}-ingress
+  labels:
+    {{- $commonLabels | nindent 4 }}
+spec:
+  ingressClassName: {{ .Values.ingress.className }}
+  rules:
+    - host: {{ .Values.ingress.host }}
+      http:
+        paths:
+          - path: {{ $ingressPath | quote }}
+            pathType: Prefix
+            backend:
+              service:
+                name: {{ .Values.jobName }}-svc
+                port:
+                  number: 8888

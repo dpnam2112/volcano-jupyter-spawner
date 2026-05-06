@@ -1,0 +1,34 @@
+# -- Job Configuration
+username: "namdp"
+jobName: "jupyter-123"
+queue: "default"
+# wallTimeSeconds: 14400  # Optional: e.g., 4 hours = 14400 seconds. Leave empty to disable.
+orgPrefix: org.example.com
+
+# -- Compute Requirements
+resources:
+  cpu: "2"
+  memory: "8Gi"
+  volcano.sh/vgpu-number: "1"
+
+# -- Storage Configuration (NFS)
+nfs:
+  mounts: []
+#    - server: "10.0.0.5"
+#      path: "/export/users/namdp"
+#      mountPath: "/home/jovyan/work"
+#      readOnly: false
+#    - server: "10.0.0.6"
+#      path: "/export/datasets/imagenet"
+#      mountPath: "/data/imagenet"
+#      readOnly: true
+
+# -- Networking
+ingress:
+  host: "jupyter.example.com"
+  className: "nginx"
+
+# -- Container Image
+image:
+  repository: "jupyter/base-notebook"
+  tag: "latest"

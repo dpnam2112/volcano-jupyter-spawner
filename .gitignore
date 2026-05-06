@@ -1,0 +1,17 @@
+# == Helm Specifics ==
+charts/
+
+# Ignore packaged charts (the .tgz files created by 'helm package')
+*.tgz
+
+# == Local Development & Secrets ==
+*-values.yaml
+values-*.yaml
+local-*.yaml
+.env
+
+# == OS & IDE ==
+.DS_Store
+.idea/
+.vscode/
+*.swp

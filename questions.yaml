@@ -1,0 +1,77 @@
+# questions.yaml
+# This file defines the dynamic inputs required to populate values.yaml 
+# for a specific Jupyter notebook session.
+
+groups:
+  - name: "User Identity"
+    description: "Basic ownership information"
+  - name: "Job Resources"
+    description: "Compute and scheduling settings"
+  - name: "Environment"
+    description: "Storage and software settings"
+
+questions:
+  # --- User Identity ---
+  - variable: username
+    label: "Username"
+    description: "The unique identifier for the user owning this session."
+    type: string
+    required: true
+    group: "User Identity"
+
+  - variable: jobName
+    label: "Job Name"
+    description: "A unique name for this specific Jupyter instance."
+    type: string
+    required: true
+    group: "User Identity"
+
+  # --- Job Resources ---
+  - variable: queue
+    label: "Volcano Queue"
+    description: "The scheduling queue to submit the job to (e.g., default, high-priority)."
+    type: string
+    default: "default"
+    group: "Job Resources"
+
+  - variable: wallTimeSeconds
+    label: "Wall Time (Seconds)"
+    description: "Optional maximum duration for the session. Leave blank for no limit."
+    type: int
+    group: "Job Resources"
+
+  - variable: resources.cpu
+    label: "CPU Request"
+    description: "Number of CPU cores (e.g., 2, 500m)."
+    type: string
+    default: "2"
+    group: "Job Resources"
+
+  - variable: resources.memory
+    label: "Memory Request"
+    description: "Amount of RAM (e.g., 4Gi, 8Gi)."
+    type: string
+    default: "8Gi"
+    group: "Job Resources"
+
+  # --- Environment ---
+  - variable: image.repository
+    label: "Notebook Image"
+    description: "The Docker image to use for the notebook."
+    type: string
+    default: "jupyter/base-notebook"
+    group: "Environment"
+
+  - variable: image.tag
+    label: "Image Tag"
+    description: "The version/tag of the notebook image."
+    type: string
+    default: "latest"
+    group: "Environment"
+
+  - variable: ingress.host
+    label: "Ingress Hostname"
+    description: "The domain through which the notebook will be accessed."
+    type: string
+    default: "jupyter.example.com"
+    group: "Environment"
