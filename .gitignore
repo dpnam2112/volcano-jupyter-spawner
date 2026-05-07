@@ -1,7 +1,3 @@
-
-# Ignore packaged charts (the .tgz files created by 'helm package')
-*.tgz
-
 # == Local Development & Secrets ==
 *-values.yaml
 values-*.yaml

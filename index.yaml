@@ -1,0 +1,18 @@
+apiVersion: v1
+entries:
+  volcano-jupyter-spawner:
+  - apiVersion: v2
+    created: "2026-05-07T09:35:27.350804622+07:00"
+    description: Make it easier to spawn jupyter notebook as a Volcano batch job.
+    digest: ff15c53c5577a75f1a586502d48a5a65f40cb5d4207bea8c71efe424ba901a64
+    maintainers:
+    - email: dpnam2112@gmail.com
+      name: dpnam2112
+    - email: namdp@vng.com.vn
+      name: namdp
+    name: volcano-jupyter-spawner
+    type: application
+    urls:
+    - https://dpnam2112.github.io/volcano-jupyter-spawner/volcano-jupyter-spawner-0.0.1-dev.tgz
+    version: 0.0.1-dev
+generated: "2026-05-07T09:35:27.349557555+07:00"
