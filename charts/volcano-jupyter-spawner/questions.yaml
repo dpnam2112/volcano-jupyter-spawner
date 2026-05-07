@@ -18,6 +18,7 @@ questions:
     type: string
     required: true
     group: "User Identity"
+    default: "${RANCHER_USER_ID}"
 
   - variable: jobName
     label: "Job Name"
