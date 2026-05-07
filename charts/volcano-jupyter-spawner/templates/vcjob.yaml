@@ -4,6 +4,7 @@ apiVersion: batch.volcano.sh/v1alpha1
 kind: Job
 metadata:
   name: {{ .Values.jobName | quote }}
+  namespace: {{ .Release.Namespace }}
   labels:
     {{- $commonLabels | nindent 4 }}
 spec:

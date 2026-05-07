@@ -4,6 +4,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: {{ .Values.jobName }}-svc
+  namespace: {{ .Release.Namespace }}
   labels:
     {{- $commonLabels | nindent 4 }}
 spec:
