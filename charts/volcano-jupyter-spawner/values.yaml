@@ -8,7 +8,7 @@ orgPrefix: org.example.com
 # -- Compute Requirements
 resources:
   cpu: "2"
-  memory: "8Gi"
+  memory: "2Gi"
   volcano.sh/vgpu-number: "1"
 
 # -- Storage Configuration (NFS)

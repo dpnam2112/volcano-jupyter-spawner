@@ -18,7 +18,6 @@ questions:
     type: string
     required: true
     group: "User Identity"
-    default: "${RANCHER_USER_ID}"
 
   - variable: jobName
     label: "Job Name"
@@ -52,7 +51,7 @@ questions:
     label: "Memory Request"
     description: "Amount of RAM (e.g., 4Gi, 8Gi)."
     type: string
-    default: "8Gi"
+    default: "2Gi"
     group: "Job Resources"
 
   # --- Environment ---

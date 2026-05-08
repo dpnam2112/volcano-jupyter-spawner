@@ -6,7 +6,25 @@ entries:
       catalog.cattle.io/display-name: Volcano Jupyter Spawner
       catalog.cattle.io/type: app
     apiVersion: v2
-    created: "2026-05-07T13:08:54.671148301+07:00"
+    created: "2026-05-08T15:53:02.598980506+07:00"
+    description: Make it easier to spawn jupyter notebook as a Volcano batch job.
+    digest: 1526c29912390c81335726bcdb2da919065c790a326881eaf6a689075cc25559
+    maintainers:
+    - email: dpnam2112@gmail.com
+      name: dpnam2112
+    - email: namdp@vng.com.vn
+      name: namdp
+    name: volcano-jupyter-spawner
+    type: application
+    urls:
+    - https://dpnam2112.github.io/volcano-jupyter-spawner/assets/volcano-jupyter-spawner-0.0.4.tgz
+    version: 0.0.4
+  - annotations:
+      catalog.cattle.io/certified: rancher
+      catalog.cattle.io/display-name: Volcano Jupyter Spawner
+      catalog.cattle.io/type: app
+    apiVersion: v2
+    created: "2026-05-08T15:53:02.598630623+07:00"
     description: Make it easier to spawn jupyter notebook as a Volcano batch job.
     digest: dad7ca7de63251f8fa20ea4db51aa32ba722c58db4503260356873aa9be3f3c5
     maintainers:
@@ -24,7 +42,7 @@ entries:
       catalog.cattle.io/display-name: Volcano Jupyter Spawner
       catalog.cattle.io/type: app
     apiVersion: v2
-    created: "2026-05-07T13:08:54.67053394+07:00"
+    created: "2026-05-08T15:53:02.598287519+07:00"
     description: Make it easier to spawn jupyter notebook as a Volcano batch job.
     digest: 12264e5ff0694cc6675e194be0ed86b7d5cc4e3bc9f3b9d40fae015e53d69b53
     maintainers:
@@ -43,7 +61,7 @@ entries:
       catalog.cattle.io/namespace: default
       catalog.cattle.io/type: app
     apiVersion: v2
-    created: "2026-05-07T13:08:54.669937775+07:00"
+    created: "2026-05-08T15:53:02.597816576+07:00"
     description: Make it easier to spawn jupyter notebook as a Volcano batch job.
     digest: d9d6b123729c1053c3d1ff376f851e8bddb344b83e0a241670d76aff0e2223c5
     maintainers:
@@ -62,7 +80,7 @@ entries:
       catalog.cattle.io/namespace: default
       catalog.cattle.io/type: app
     apiVersion: v2
-    created: "2026-05-07T13:08:54.669297769+07:00"
+    created: "2026-05-08T15:53:02.597210321+07:00"
     description: Make it easier to spawn jupyter notebook as a Volcano batch job.
     digest: 41b722dff27162fd5152107146f3a99a5e67e9507e06dff869b291aa3248a0b6
     maintainers:
@@ -81,7 +99,7 @@ entries:
       catalog.cattle.io/namespace: default
       catalog.cattle.io/type: app
     apiVersion: v2
-    created: "2026-05-07T13:08:54.668710515+07:00"
+    created: "2026-05-08T15:53:02.596615345+07:00"
     description: Make it easier to spawn jupyter notebook as a Volcano batch job.
     digest: 1fa73b2c5080f405b728dd23d83c394118a42640d60fd8e421d7606249069995
     maintainers:
@@ -100,7 +118,7 @@ entries:
       catalog.cattle.io/namespace: default
       catalog.cattle.io/type: app
     apiVersion: v2
-    created: "2026-05-07T13:08:54.66808849+07:00"
+    created: "2026-05-08T15:53:02.596165761+07:00"
     description: Make it easier to spawn jupyter notebook as a Volcano batch job.
     digest: 438bf0b1034ac815718da8d158df571c5450680a4c3052cc09a3b18a79d8ef95
     maintainers:
@@ -113,4 +131,4 @@ entries:
     urls:
     - https://dpnam2112.github.io/volcano-jupyter-spawner/assets/volcano-jupyter-spawner-0.0.1-dev.tgz
     version: 0.0.1-dev
-generated: "2026-05-07T13:08:54.667290319+07:00"
+generated: "2026-05-08T15:53:02.595570848+07:00"
