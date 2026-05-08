@@ -32,18 +32,19 @@ spec:
                 - containerPort: 8888
                   name: http
               {{- if .Values.resources }}
-              requests:
-                cpu: {{ .Values.resources.cpu | quote }}
-                memory: {{ .Values.resources.memory | quote }}
-                {{- if index .Values.resources "volcano.sh/vgpu-number" }}
-                volcano.sh/vgpu-number: {{ index .Values.resources "volcano.sh/vgpu-number" | quote }}
-                {{- end }}
-              limits:
-                cpu: {{ .Values.resources.cpu | quote }}
-                memory: {{ .Values.resources.memory | quote }}
-                {{- if index .Values.resources "volcano.sh/vgpu-number" }}
-                volcano.sh/vgpu-number: {{ index .Values.resources "volcano.sh/vgpu-number" | quote }}
-                {{- end }}
+              resources:
+                requests:
+                  cpu: {{ .Values.resources.cpu | quote }}
+                  memory: {{ .Values.resources.memory | quote }}
+                  {{- if index .Values.resources "volcano.sh/vgpu-number" }}
+                  volcano.sh/vgpu-number: {{ index .Values.resources "volcano.sh/vgpu-number" | quote }}
+                  {{- end }}
+                limits:
+                  cpu: {{ .Values.resources.cpu | quote }}
+                  memory: {{ .Values.resources.memory | quote }}
+                  {{- if index .Values.resources "volcano.sh/vgpu-number" }}
+                  volcano.sh/vgpu-number: {{ index .Values.resources "volcano.sh/vgpu-number" | quote }}
+                  {{- end }}
               {{- end }}
               volumeMounts:
                 {{- range $index, $mount := .Values.nfs.mounts }}
