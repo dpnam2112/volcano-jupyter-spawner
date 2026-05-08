@@ -9,7 +9,7 @@ orgPrefix: org.example.com
 resources:
   cpu: "2"
   memory: "2Gi"
-  volcano.sh/vgpu-number: "1"
+  volcano.sh/vgpu-number: null
 
 # -- Storage Configuration (NFS)
 nfs:
