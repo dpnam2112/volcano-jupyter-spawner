@@ -69,10 +69,3 @@ questions:
     type: string
     default: "latest"
     group: "Environment"
-
-  - variable: ingress.host
-    label: "Ingress Hostname"
-    description: "The domain through which the notebook will be accessed."
-    type: string
-    default: "jupyter.example.com"
-    group: "Environment"

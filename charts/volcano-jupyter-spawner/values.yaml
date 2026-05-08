@@ -1,5 +1,5 @@
 # -- Job Configuration
-username: "namdp"
+username: "johndoe"
 jobName: "jupyter-123"
 queue: "default"
 # wallTimeSeconds: 14400  # Optional: e.g., 4 hours = 14400 seconds. Leave empty to disable.
