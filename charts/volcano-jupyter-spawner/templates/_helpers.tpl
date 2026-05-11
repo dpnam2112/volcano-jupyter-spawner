@@ -12,10 +12,3 @@ Generate core labels using a dictionary and toYaml for clean rendering.
 {{- /* Render the dictionary as YAML */ -}}
 {{- $labels | toYaml -}}
 {{- end -}}
-
-{{/*
-Generate the standardized ingress path: /username/jobname
-*/}}
-{{- define "volcano-jupyter-spawner.ingressPath" -}}
-{{- printf "/%s/%s" .Values.username .Values.jobName -}}
-{{- end -}}

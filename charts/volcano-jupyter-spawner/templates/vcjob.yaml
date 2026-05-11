@@ -3,7 +3,7 @@
 apiVersion: batch.volcano.sh/v1alpha1
 kind: Job
 metadata:
-  name: {{ .Values.jobName | quote }}
+  name: {{ .Release.Name }}-{{ .Values.jobName }}
   namespace: {{ .Release.Namespace }}
   labels:
     {{- $commonLabels | nindent 4 }}

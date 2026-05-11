@@ -23,11 +23,6 @@ nfs:
 #      mountPath: "/data/imagenet"
 #      readOnly: true
 
-# -- Networking
-ingress:
-  host: "jupyter.example.com"
-  className: "nginx"
-
 # -- Container Image
 image:
   repository: "jupyter/base-notebook"
