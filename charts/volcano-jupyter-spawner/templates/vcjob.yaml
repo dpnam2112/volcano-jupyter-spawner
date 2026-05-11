@@ -26,7 +26,6 @@ spec:
               image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
               command: ["start-notebook.sh"]
               args:
-                - "--ServerApp.base_url=/{{ .Values.username }}/{{ .Values.jobName }}"
                 - "--ServerApp.token=''" # Disable token auth for this simplified version
               ports:
                 - containerPort: 8888

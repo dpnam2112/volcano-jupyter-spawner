@@ -19,13 +19,6 @@ questions:
     required: true
     group: "User Identity"
 
-  - variable: jobName
-    label: "Job Name"
-    description: "A unique name for this specific Jupyter instance."
-    type: string
-    required: true
-    group: "User Identity"
-
   # --- Job Resources ---
   - variable: queue
     label: "Volcano Queue"

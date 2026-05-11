@@ -6,7 +6,6 @@ Generate core labels using a dictionary and toYaml for clean rendering.
 {{- /* Create the dictionary and set keys */ -}}
 {{- $labels := dict -}}
 {{- $_ := set $labels (printf "%s/username" $prefix) .Values.username -}}
-{{- $_ := set $labels (printf "%s/job-name" $prefix) .Values.jobName -}}
 {{- $_ := set $labels (printf "%s/service" $prefix) "volcano-jupyter-spawner" -}}
 {{- $_ := set $labels "app.kubernetes.io/managed-by" "Helm" -}}
 {{- /* Render the dictionary as YAML */ -}}
