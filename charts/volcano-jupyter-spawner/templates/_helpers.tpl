@@ -12,3 +12,15 @@ Generate core labels using a dictionary and toYaml for clean rendering.
 {{- /* Render the dictionary as YAML */ -}}
 {{- $labels | toYaml -}}
 {{- end -}}
+
+{{/* 
+Truncate at 63 chars and remove trailing hyphens 
+*/}}
+{{- define "volcano-jupyter-spawner.jobname" -}}
+{{- $name := default .Chart.Name .Values.nameOverride -}}
+{{- if contains $name .Release.Name -}}
+{{- .Release.Name | trunc 63 | trimSuffix "-" -}}
+{{- else -}}
+{{- printf "%s-%s" .Release.Name $name | trunc 63 | trimSuffix "-" -}}
+{{- end -}}
+{{- end -}}
